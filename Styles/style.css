@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.container {
+  display: grid;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 20px 50px 20px;
+  grid-template-columns: repeat(4, 23%);
+  gap: 30px;
+}
+
+.container .note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #eeeeee;
+  box-sizing: border-box;
+  box-shadow: 0 0 2px black;
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+  height: auto;
+  overflow: hidden;
+  transition: transform 200ms ease;
+}
+
+.container .note:hover {
+  transform: translateY(-10px);
+}
+
+.container .note .Title {
+  text-align: center;
+  width: 100%;
+  font-size: 32px;
+  font-weight: bold;
+  padding: 0;
+  margin: 5px 0;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  padding: 5px 0;
+}
+
+.container .note .Body {
+  font-size: 18px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container .note .buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ddd;
+  margin-top: auto;
+}
+.container .note .buttons a {
+  text-decoration: none;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+  color: black;
+  transition: background-color 100ms ease;
+}
+
+.container .note .buttons a:hover {
+  background-color: #ccc;
+}
+
+.add-button {
+  text-decoration: none;
+  display: inline-block;
+  background-color: limegreen;
+  color: white;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  font-size: 20px;
+  border: none;
+  border-radius: 8px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-button:hover {
+  transform: scale(1.05);
+  background-color: #32cd32;
+}
+
+.add-button:active {
+  transform: scale(0.95);
+}
+
+.msg {
+  position: fixed;
+  top: 0px;
+  left: 10%;
+  transform: translateX(-50%);
+  background: rgba(0, 255, 0, 0.1);
+  padding: 15px 20px;
+  font-size: 18px;
+  color: green;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
