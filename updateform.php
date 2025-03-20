@@ -32,13 +32,15 @@ include("notedata.php");
             $ori_data = mysqli_fetch_assoc($query);
             $id = $ori_data["ID"];
     ?>
-            <form action="update.php?id=<?php echo $id ?>" method='post'>
+            <form action="update.php?id=<?php echo $id ?>" onsubmit="return checkentry()" method='post'>
                 Title:
                 <input type="text" name="title" required value="<?php echo $ori_data['Title']; ?>">
                 Content:
                 <textarea name="text-area" id="text-area" maxlength="500" required><?php echo $ori_data['Body']; ?></textarea>
                 <input type="submit" value="Update" class="button">
             </form>
+
+            <script src="Scripts/validation.js"></script>
     <?php
         }
     }
@@ -50,7 +52,7 @@ include("notedata.php");
 
 <?php
 
-if (!empty($_POST["title"]) && !empty($_POST["text-area"])) {
+if (!empty($_POST["title"]) && !empty($_POST["text-area"]) && $_SESSION["username"]) {
     $title = $_POST["title"];
     $body = $_POST["text-area"];
     $sql = "INSERT INTO note_data(Title, Body) VALUES('$title', '$body');";

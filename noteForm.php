@@ -19,13 +19,15 @@ include("notedata.php");
 </head>
 
 <body>
-    <form action='<?php $_SERVER["PHP_SELF"] ?>' method='post'>
+    <form action='<?php $_SERVER["PHP_SELF"] ?>' onsubmit="return checkentry()" method='post'>
         Title:
-        <input type="text" name="title" required>
+        <input type="text" name="title" id="title">
         Content:
-        <textarea name="text-area" id="text-area" maxlength="500" required></textarea>
+        <textarea name="text-area" id="text-area"></textarea>
         <input type="submit" value="Add" class="button">
     </form>
+
+    <script src="Scripts/validation.js"></script>
 </body>
 
 </html>

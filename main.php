@@ -29,17 +29,19 @@ include("notedata.php");
         $sql = "SELECT * FROM note_data;";
         $data = mysqli_query($noteconn, $sql);
 
-        while ($row = mysqli_fetch_assoc($data)) {
+        if ($row = mysqli_fetch_assoc($data)) {
+            do {
         ?>
-            <div class="note">
-                <p class="Title"><?php echo htmlspecialchars($row["Title"]); ?></p>
-                <p class="Body"><?php echo htmlspecialchars($row["Body"]); ?></p>
-                <div class="buttons">
-                    <a href="updateform.php?id=<?php echo $row['ID'] ?>">Edit</a>
-                    <a href="delete.php?id=<?php echo $row['ID'] ?>">Delete</a>
+                <div class="note">
+                    <p class="Title"><?php echo htmlspecialchars($row["Title"]); ?></p>
+                    <p class="Body"><?php echo htmlspecialchars($row["Body"]); ?></p>
+                    <div class="buttons">
+                        <a href="updateform.php?id=<?php echo $row['ID'] ?>">Edit</a>
+                        <a href="delete.php?id=<?php echo $row['ID'] ?>">Delete</a>
+                    </div>
                 </div>
-            </div>
         <?php
+            } while ($row = mysqli_fetch_assoc($data));
         }
 
         if (isset($_GET["msg"])) {

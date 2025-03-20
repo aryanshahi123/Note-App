@@ -15,11 +15,11 @@ require("database.php");
 
 <body>
     <div class="form">
-        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" onsubmit="return checklogin()" method="post">
             <label for="user">User Name:</label>
-            <input type="text" name="user" id="user" required autocomplete="off"><br>
+            <input type="text" name="user" id="user" autocomplete="off"><br>
             <label for="pwd">Password:</label>
-            <input type="password" name="password" id="pwd" required> <br>
+            <input type="password" name="password" id="pwd"> <br>
             <input type="submit" class="button" value="Login">
         </form>
 
@@ -33,6 +33,7 @@ require("database.php");
         echo "<p class='msg'>$msg</p>";
     }
     ?>
+    <script src="Scripts/validation.js"></script>
 </body>
 
 </html>

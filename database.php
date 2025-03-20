@@ -2,9 +2,9 @@
 $db_server = "localhost";
 $db_user = "root";
 $db_pass = "";
-$db_name = "users";
+$db_name = "crud_app";
 $conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
 
-if ($conn) {
-    // echo ("You are connected. <br>");
+if (!$conn) {
+    die("Connection Failed" . mysqli_connect_error($conn));
 }

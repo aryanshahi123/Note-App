@@ -10,13 +10,13 @@
 
 <body>
     <div class="form">
-        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" onsubmit="return checksignup()" method="post">
             <label for="user">User Name:</label>
-            <input type="text" name="user" id="user" required autocomplete="off"><br>
+            <input type="text" name="user" id="user" autocomplete="off"><br>
             <label for="pwd">Password:</label>
-            <input type="password" name="password" id="pwd" required> <br>
+            <input type="password" name="password" id="pwd"> <br>
             <label for="cpwd">Confirm Password:</label>
-            <input type="password" name="cpassword" id="cpwd" required> <br>
+            <input type="password" name="cpassword" id="cpwd"> <br>
             <input type="submit" class="button" value="Sign Up">
         </form>
         <p>Already Registered?<a href="index.php">Log In</a></p>
@@ -28,6 +28,8 @@
         echo "<p class='msg'>$msg</p>";
     }
     ?>
+
+    <script src="Scripts/validation.js"></script>
 </body>
 
 </html>
@@ -59,7 +61,7 @@ if (!empty($_POST["user"]) && !empty($_POST["password"]) && !empty($_POST["cpass
 
 
             if ($valid) {
-                header("location:index.php?");
+                header("location:index.php?msg=Registered.");
             } else {
                 header("location:signup.php?msg=Error in storing data.");
             }
