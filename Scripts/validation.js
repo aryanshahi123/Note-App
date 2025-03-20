@@ -38,7 +38,7 @@ function checkentry(){
     if(title.trim()==""||body.trim()==""){
         alert("Please fill the fields.");
         return false;
-    }else if(title.length>50){
+    }else if(title.length>20){
         alert("Title cannot be longer than 50 characters.");
         return false;
     }else if(body.length>500){
