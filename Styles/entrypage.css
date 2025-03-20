@@ -11,6 +11,7 @@ body {
   align-items: center;
   height: 100vh;
   font-size: 18px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 form {
